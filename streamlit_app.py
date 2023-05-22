@@ -22,3 +22,10 @@ with tab1:
     smiles = st.text_input("Substrate SMILES string:", value="CCO")
     organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
     clicked = st.button("Calculate")
+
+with tab2:
+    st.header("Calculate Ki of an Enzyme-Inhibitor pair")
+    enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
+    smiles = st.text_input("Inhibitor SMILES string:", value="CCO")
+    organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
+    clicked = st.button("Calculate")
