@@ -6,21 +6,21 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
-# 2. horizontal menu
-selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism-prediction", 'Help'], 
-    icons=['list-task', 'cloud-upload', "piggy-bank", 'info-square'], 
-    menu_icon="cast", default_index=0, orientation="horizontal")
-selected2
+
 """
 # DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
 
 Some brief description here....
 Line1
 Line2
-
-If you have any questions, checkout our [GitHub](https://github.com/maranasgroup) for more details.
-
 """
+
+# horizontal menu
+selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism-prediction", 'Help'], 
+    icons=['list-task', 'cloud-upload', "piggy-bank", 'info-square'], 
+    menu_icon="cast", default_index=0, orientation="horizontal")
+selected2
+
 def print_success(success):
     if success:
         st.success('Valid!', icon="✅")
