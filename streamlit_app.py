@@ -46,6 +46,9 @@ def validate_enzyme(enzyme):
                 except:
                     success = False
     print_success(success)
+    
+def calculate_kcat_km(enzyme, organism_id, smiles):
+    return 0.0
 
 tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
 with tab1:
@@ -72,8 +75,14 @@ with tab1:
         st.text("")
         st.text("")
         validate_smiles(smiles)
-        
-    clicked = st.button("Calculate")
+    
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        clicked = st.button("Calculate")
+    with row0_2:
+        st.text("")
+        st.text("")
+        calculate_kcat_km(enzyme, organism_id, smiles)
     
 with tab2:
     st.header("Calculate Ki of an Enzyme-Inhibitor pair")
