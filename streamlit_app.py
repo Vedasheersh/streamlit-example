@@ -17,6 +17,7 @@ If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for 
 """
 def validate_enzyme(enzyme):
     ecs = enzyme.split('.')
+    st.text("Status")
     success = True
     if len(ecs)!=4:
         success = False
