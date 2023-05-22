@@ -54,17 +54,20 @@ with tab1:
     with row0_1:
         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
     with row0_2:
+        st.text("")
         validate_enzyme(enzyme)
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
     with row0_1:
         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
     with row0_2:
+        st.text("")
         validate_organism(organism_id)
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
     with row0_1:
         smiles = st.text_input("Substrate SMILES string:", value="CCO")
     with row0_2:
+        st.text("")
         validate_smiles(smiles)
         
     clicked = st.button("Calculate")
