@@ -5,21 +5,26 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to Streamlit!
+# DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+Some brief description here....
+Line1
+Line2
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for more details.
 
-In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
 
 with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
-
+    choices = st.multiselect("Parameter", ["kcat", "Km", "Ki"])
+    smiles = st.text_input("Substrate SMILES string:", value=)
+    organism_id = st.number_input("Organism NCBI Taxonomy id:", value=541)
+    ec1 = st.number_input("EC1", value=1)
+    ec2 = st.number_input("EC2", value=1)
+    ec3 = st.number_input("EC3", value=1)
+    ec4 = st.number_input("EC4", value=1)
+    
     Point = namedtuple('Point', 'x y')
     data = []
 
