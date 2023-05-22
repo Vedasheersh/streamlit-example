@@ -50,6 +50,9 @@ def validate_enzyme(enzyme):
 def calculate_kcat_km(enzyme, organism_id, smiles):
     return 0.0
 
+def calculate_ki(enzyme, organism_id, smiles):
+    return 0.0
+
 tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
 with tab1:
     st.header("Calculate kcat & Km of an Enzyme-Substrate pair")
@@ -86,7 +89,33 @@ with tab1:
     
 with tab2:
     st.header("Calculate Ki of an Enzyme-Inhibitor pair")
-    enzyme = st.text_input("Enzyme EC number :", value="1.1.1.1")
-    smiles = st.text_input("Inhibitor SMILES string:", value="CCO")
-    organism_id = st.text_input("Organism NCBI Taxonomy id :", value="541")
-    clicked = st.button("Calculate ")
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        enzyme2 = st.text_input("Enzyme EC number :", value="1.1.1.1")
+    with row0_2:
+        st.text("")
+        st.text("")
+        validate_enzyme(enzyme)
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        organism_id2 = st.text_input("Organism NCBI Taxonomy id :", value="541")
+    with row0_2:
+        st.text("")
+        st.text("")
+        validate_organism(organism_id)
+    
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        smiles2 = st.text_input("Inhibitor SMILES string :", value="CCO")
+    with row0_2:
+        st.text("")
+        st.text("")
+        validate_smiles(smiles)
+    
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        clicked = st.button("Calculate")
+    with row0_2:
+        st.text("")
+        st.text("")
+        calculate_ki(enzyme2, organism_id2, smiles2)
