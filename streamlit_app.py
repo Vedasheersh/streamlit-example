@@ -12,7 +12,7 @@ Some brief description here....
 Line1
 Line2
 
-If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for more details.
+If you have any questions, checkout our [GitHub](https://github.com/maranasgroup) for more details.
 
 """
 def print_success(success):
