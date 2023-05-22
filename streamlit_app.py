@@ -26,6 +26,11 @@ def validate_organism(organism):
     if not str(organism) in ['541']:
         success = False
     print_success(success)
+
+def validate_smiles(smiles):
+    success = True
+    print_success(success)
+    
 def validate_enzyme(enzyme):
     ecs = enzyme.split('.')
 #     st.text("Status")
@@ -55,6 +60,12 @@ with tab1:
         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
     with row0_2:
         validate_organism(organism_id)
+    
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        smiles = st.text_input("Substrate SMILES string:", value="CCO")
+    with row0_2:
+        validate_smiles(smiles)
         
     clicked = st.button("Calculate")
     
