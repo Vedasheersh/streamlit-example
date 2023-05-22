@@ -3,8 +3,14 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-st.set_page_config(layout="wide")
+from streamlit_option_menu import option_menu
 
+st.set_page_config(layout="wide")
+# 2. horizontal menu
+selected2 = option_menu(None, ["Home", "Upload", "Tasks", 'Settings'], 
+    icons=['house', 'cloud-upload', "list-task", 'gear'], 
+    menu_icon="cast", default_index=0, orientation="horizontal")
+selected2
 """
 # DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
 
