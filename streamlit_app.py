@@ -9,10 +9,6 @@ st.set_page_config(layout="wide")
 
 """
 # DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
-
-Some brief description here....
-Line1
-Line2
 """
 
 # horizontal menu
