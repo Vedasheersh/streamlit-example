@@ -16,7 +16,22 @@ If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for 
 
 """
 def validate_enzyme(enzyme):
-    return type(enzyme) is str
+    ecs = enzyme.split('.')
+    success = True
+    if len(ecs)!=4:
+        success = False
+    else:
+        for each in ecs:
+            if each=='-': continue
+            else:
+                try:
+                    each_int = int(each)
+                except:
+                    success = False
+    if success:
+        st.success('Valid!', icon="✅")
+    else:
+        st.error('Invalid EC format!', icon="🚨")        
 
 tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
 with tab1:
