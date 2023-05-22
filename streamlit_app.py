@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 st.set_page_config(layout="wide")
 # 2. horizontal menu
 selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism-prediction", 'Help'], 
-    icons=['list-task', 'cloud-upload', "list-task", 'info-square-fill'], 
+    icons=['list-task', 'cloud-upload', "list-task", 'info-square'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 selected2
 """
