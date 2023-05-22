@@ -15,14 +15,10 @@ If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for 
 
 """
 
-
-with st.echo(code_location='below'):
-    choices = st.radio("Parameter", ["kcat", "Km", "Ki"])
+tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
+with tab1:
+    st.header("Calculate kcat & Km of an Enzyme-Substrate pair")
+    enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
     smiles = st.text_input("Substrate SMILES string:", value="CCO")
     organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
-    ec1 = st.text_input("EC1", value="1")
-    ec2 = st.text_input("EC2", value="1")
-    ec3 = st.text_input("EC3", value="1")
-    ec4 = st.text_input("EC4", value="1")
-    
     clicked = st.button("Calculate")
