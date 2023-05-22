@@ -3,6 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+st.set_page_config(layout="wide")
 
 """
 # DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
@@ -14,8 +15,6 @@ Line2
 If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for more details.
 
 """
-
-st.set_page_config(layout="wide")
 tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
 with tab1:
     st.header("Calculate kcat & Km of an Enzyme-Substrate pair")
