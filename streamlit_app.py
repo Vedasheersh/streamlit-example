@@ -81,7 +81,7 @@ with tab1:
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
     with row0_1:
-        clicked = st.button("Calculate")
+        clicked = st.button("Predict")
     with row0_2:
         st.text("")
         st.text("")
@@ -114,7 +114,7 @@ with tab2:
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
     with row0_1:
-        clicked = st.button("Calculate")
+        clicked = st.button("Predict ")
     with row0_2:
         st.text("")
         st.text("")
