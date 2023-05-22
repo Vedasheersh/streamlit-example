@@ -15,9 +15,20 @@ Line2
 If you have any questions, checkout our [GitHub](https://docs.streamlit.io) for more details.
 
 """
+def print_success(success):
+    if success:
+        st.success('Valid!', icon="✅")
+    else:
+        st.error('Invalid EC format!', icon="🚨")   
+        
+def validate_organism(organism):
+    success = True
+    if not str(organism) in ['541']:
+        success = False
+    print_success(success)
 def validate_enzyme(enzyme):
     ecs = enzyme.split('.')
-    st.text("Status")
+#     st.text("Status")
     success = True
     if len(ecs)!=4:
         success = False
@@ -29,10 +40,7 @@ def validate_enzyme(enzyme):
                     each_int = int(each)
                 except:
                     success = False
-    if success:
-        st.success('Valid!', icon="✅")
-    else:
-        st.error('Invalid EC format!', icon="🚨")        
+    print_success(success)
 
 tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
 with tab1:
@@ -42,7 +50,12 @@ with tab1:
         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
     with row0_2:
         validate_enzyme(enzyme)
-    organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+    with row0_1:
+        organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
+    with row0_2:
+        validate_organism(organism_id)
+        
     clicked = st.button("Calculate")
     
 with tab2:
