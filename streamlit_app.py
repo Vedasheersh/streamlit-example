@@ -10,9 +10,9 @@ organism_unique_list = ['None'] + sorted(list(input_dataframe.ORGANISM.unique())
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-kcat_symbol = st.latex(r'k_{cat}')
-km_symbol = st.latex(r'K_{m}')
-ki_symbol = st.latex(r'K_{i}')
+# kcat_symbol = st.latex(r'k_{cat}')
+# km_symbol = st.latex(r'K_{m}')
+# ki_symbol = st.latex(r'K_{i}')
 
 st.set_page_config(layout="wide")
 
@@ -71,8 +71,7 @@ def calculate_ki(enzyme, organism_id, smiles):
 
 tab1, tab2 = st.tabs(["kcat & Km", "Ki"])
 with tab1:
-    
-    st.header(f"Calculate {kcat_symbol} and {km_symbol} of an Enzyme-Substrate pair")
+    st.header(f"Calculate {st.latex(r'k_{cat}')} and {st.latex(r'K_{m}')} of an Enzyme-Substrate pair")
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
         enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
