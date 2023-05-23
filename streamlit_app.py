@@ -71,7 +71,6 @@ with tab1:
     st.header("Calculate kcat & Km of an Enzyme-Substrate pair")
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
-#         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
         enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
     with row0_2:
         st.text("")
@@ -105,33 +104,34 @@ with tab1:
     
 with tab2:
     st.header("Calculate Ki of an Enzyme-Inhibitor pair")
-    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
-    with row0_1:
-        enzyme2 = st.text_input("Enzyme EC number :", value="1.1.1.1")
-    with row0_2:
-        st.text("")
-        st.text("")
-        validate_enzyme(enzyme)
-    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
-    with row0_1:
-        organism_id2 = st.text_input("Organism NCBI Taxonomy id :", value="541")
-    with row0_2:
-        st.text("")
-        st.text("")
-        validate_organism(organism_id)
+    st.header("Coming soon!")
+#     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+#     with row0_1:
+#         enzyme2 = st.text_input("Enzyme EC number :", value="1.1.1.1")
+#     with row0_2:
+#         st.text("")
+#         st.text("")
+#         validate_enzyme(enzyme)
+#     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+#     with row0_1:
+#         organism_id2 = st.text_input("Organism NCBI Taxonomy id :", value="541")
+#     with row0_2:
+#         st.text("")
+#         st.text("")
+#         validate_organism(organism_id)
     
-    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
-    with row0_1:
-        smiles2 = st.text_input("Inhibitor SMILES string :", value="CCO")
-    with row0_2:
-        st.text("")
-        st.text("")
-        validate_smiles(smiles)
+#     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+#     with row0_1:
+#         smiles2 = st.text_input("Inhibitor SMILES string :", value="CCO")
+#     with row0_2:
+#         st.text("")
+#         st.text("")
+#         validate_smiles(smiles)
     
-    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
-    with row0_1:
-        clicked = st.button("Predict ")
-    with row0_2:
-        st.text("")
-        st.text("")
-        calculate_ki(enzyme2, organism_id2, smiles2)
+#     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 1.3, .1))
+#     with row0_1:
+#         clicked = st.button("Predict ")
+#     with row0_2:
+#         st.text("")
+#         st.text("")
+#         calculate_ki(enzyme2, organism_id2, smiles2)
