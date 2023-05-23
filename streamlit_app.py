@@ -68,7 +68,7 @@ with tab1:
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
 #         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
-        enzyme = st.selectbox("Enter EC number:", input_dataframe.EC.unique())
+        enzyme = st.selectbox("Enter EC number:", input_dataframe.EC.unique(), help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
     with row0_2:
         st.text("")
         st.text("")
