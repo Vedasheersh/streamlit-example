@@ -16,9 +16,9 @@ selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism
     icons=['list-task', 'cloud-upload', "piggy-bank", 'info-square'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 
-if selected2=="Bulk-prediction":
-    st.header('Upload CSV file in format described below')
-    uploaded_file = st.file_uploader('Upload a file')
+# if selected2=="Bulk-prediction":
+#     st.header('Upload CSV file in format described below')
+#     uploaded_file = st.file_uploader('Upload a file')
     
 
 def print_success(success):
