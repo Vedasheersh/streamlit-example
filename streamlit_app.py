@@ -97,14 +97,16 @@ with row0_2:
     st.text("")
 #         validate_smiles(substrate_name)
 
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3, row0_3, row0_spacer4, = st.columns((.1, 0.3, .1, 0.3, .1, 0.3,.1))
 with row0_1:
     clicked_kcat = st.button("Predict kcat")
-    clicked_km = st.button("Predict Km")
+    
 with row0_2:
-    st.text("")
-    st.text("")
+    clicked_km = st.button("Predict Km")
     calculate_kcat_km(enzyme, organism_name, substrate_name)
+    
+with row0_3:
+    clicked_ki = st.button("Predict Ki")
     
 # with tab2:
 #     st.header(f"Km : Michaelis constant")
