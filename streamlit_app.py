@@ -7,9 +7,13 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
 
-"""
-# DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
-"""
+row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+with row0_1:
+    """
+    # DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction
+    """
+with row0_2:
+    st.image('./cbi_logo.jpg', caption='cbi-logo', width=None, use_column_width=True)
 
 # horizontal menu
 selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism-prediction", 'Help'], 
