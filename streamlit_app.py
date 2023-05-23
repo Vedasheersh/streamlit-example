@@ -23,8 +23,8 @@ with row0_2:
     st.image('./cbi_logo.jpg', use_column_width=True)
 
 # horizontal menu
-selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism-prediction", 'Help'], 
-    icons=['list-task', 'cloud-upload', "piggy-bank", 'info-square'], 
+selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", 'Help'], 
+    icons=['list-task', 'cloud-upload', 'info-square'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 
 if selected2=="Bulk-prediction":
