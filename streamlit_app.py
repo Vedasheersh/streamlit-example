@@ -69,9 +69,9 @@ def calculate_kcat_km(enzyme, organism_id, smiles):
 def calculate_ki(enzyme, organism_id, smiles):
     return 0.0
 
-tab1, tab2 = st.tabs(["kcat", "Km", "Ki"])
+tab1, tab2, tab3 = st.tabs(["kcat", "Km", "Ki"])
 with tab1:
-    st.header(f"kcat of an Enzyme-Substrate pair")
+    st.header(f"kcat : Turnover number")
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
         enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
@@ -106,7 +106,11 @@ with tab1:
         calculate_kcat_km(enzyme, organism_name, substrate_name)
     
 with tab2:
-    st.header(f"Calculate Ki of an Enzyme-Inhibitor pair")
+    st.header(f"Km : Michaelis constant")
+    st.header("Coming soon!")
+    
+with tab3:
+    st.header(f"Ki : Inhibitor constant")
     st.header("Coming soon!")
 #     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
 #     with row0_1:
