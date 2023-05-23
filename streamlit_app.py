@@ -71,7 +71,7 @@ def calculate_ki(enzyme, organism_id, smiles):
 
 tab1, tab2, tab3 = st.tabs(["kcat", "Km", "Ki"])
 with tab1:
-    st.subheader(f"kcat : Turnover number")
+#     st.subheader(f"kcat : Turnover number")
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
         enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
@@ -99,7 +99,8 @@ with tab1:
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
-        clicked = st.button("Predict")
+        clicked_kcat = st.button("Predict kcat")
+        clicked_km = st.button("Predict Km")
     with row0_2:
         st.text("")
         st.text("")
