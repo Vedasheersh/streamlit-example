@@ -15,7 +15,11 @@ st.set_page_config(layout="wide")
 selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", "Organism-prediction", 'Help'], 
     icons=['list-task', 'cloud-upload', "piggy-bank", 'info-square'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
-selected2
+
+if selected2=="Bulk-prediction":
+    st.header('Upload CSV file in format described below')
+    uploaded_file = st.file_uploader('Upload a file')
+    
 
 def print_success(success):
     if success:
