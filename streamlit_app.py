@@ -3,6 +3,10 @@ import altair as alt
 import math
 import pandas as pd
 input_dataframe = pd.read_csv('./input_data.csv')
+ec_unique_list = ['None'] + sorted(list(input_dataframe.EC.unique()))
+substrate_unique_list = ['None'] + sorted(list(input_dataframe.SUBSTRATE.unique()))
+organism_unique_list = ['None'] + sorted(list(input_dataframe.ORGANISM.unique()))
+
 
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -68,7 +72,7 @@ with tab1:
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
 #         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
-        enzyme = st.selectbox("Enter EC number:", input_dataframe.EC.unique(), help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
+        enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
     with row0_2:
         st.text("")
         st.text("")
@@ -76,7 +80,7 @@ with tab1:
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
 #         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
-        organism_name = st.selectbox("Enter Organism name:", input_dataframe.ORGANISM.unique())
+        organism_name = st.selectbox("Enter Organism name:", organism_unique_list)
     with row0_2:
         st.text("")
         st.text("")
@@ -85,7 +89,7 @@ with tab1:
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
 #         smiles = st.text_input("Substrate SMILES string:", value="CCO")
-        substrate_name = st.selectbox("Enter Substrate name:", input_dataframe.SUBSTRATE.unique())
+        substrate_name = st.selectbox("Enter Substrate name:", substrate_unique_list)
     with row0_2:
         st.text("")
         st.text("")
