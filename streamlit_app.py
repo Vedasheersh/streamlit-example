@@ -72,7 +72,7 @@ with tab1:
     with row0_2:
         st.text("")
         st.text("")
-        validate_enzyme(enzyme)
+#         validate_enzyme(enzyme)
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
 #         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
@@ -80,7 +80,7 @@ with tab1:
     with row0_2:
         st.text("")
         st.text("")
-        validate_organism(organism_name)
+#         validate_organism(organism_name)
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
@@ -89,7 +89,7 @@ with tab1:
     with row0_2:
         st.text("")
         st.text("")
-        validate_smiles(substrate_name)
+#         validate_smiles(substrate_name)
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
@@ -97,7 +97,7 @@ with tab1:
     with row0_2:
         st.text("")
         st.text("")
-        calculate_kcat_km(enzyme, organism_id, smiles)
+        calculate_kcat_km(enzyme, organism_name, substrate_name)
     
 with tab2:
     st.header("Calculate Ki of an Enzyme-Inhibitor pair")
