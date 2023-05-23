@@ -2,6 +2,8 @@ from collections import namedtuple
 import altair as alt
 import math
 import pandas as pd
+input_dataframe = pd.read_csv('./input_data.csv')
+
 import streamlit as st
 from streamlit_option_menu import option_menu
 
@@ -22,7 +24,6 @@ if selected2=="Bulk-prediction":
     st.header('Upload CSV file in format described below')
     uploaded_file = st.file_uploader('Upload a file')
     
-
 def print_success(success):
     if success:
         st.success('Valid!', icon="✅")
@@ -66,7 +67,8 @@ with tab1:
     st.header("Calculate kcat & Km of an Enzyme-Substrate pair")
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
-        enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
+#         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
+        enzyme = st.selectbox("Enter EC number:", input_dataframe.EC)
     with row0_2:
         st.text("")
         st.text("")
