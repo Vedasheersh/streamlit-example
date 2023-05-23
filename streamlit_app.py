@@ -68,26 +68,28 @@ with tab1:
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
 #         enzyme = st.text_input("Enzyme EC number:", value="1.1.1.1")
-        enzyme = st.selectbox("Enter EC number:", input_dataframe.EC)
+        enzyme = st.selectbox("Enter EC number:", input_dataframe.EC.unique())
     with row0_2:
         st.text("")
         st.text("")
         validate_enzyme(enzyme)
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
-        organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
+#         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
+        organism_name = st.selectbox("Enter Organism name:", input_dataframe.ORGANISM.unique())
     with row0_2:
         st.text("")
         st.text("")
-        validate_organism(organism_id)
+        validate_organism(organism_name)
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
-        smiles = st.text_input("Substrate SMILES string:", value="CCO")
+#         smiles = st.text_input("Substrate SMILES string:", value="CCO")
+        substrate_name = st.selectbox("Enter Substrate name:", input_dataframe.SUBSTRATE.unique())
     with row0_2:
         st.text("")
         st.text("")
-        validate_smiles(smiles)
+        validate_smiles(substrate_name)
     
     row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
     with row0_1:
