@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
 
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.01, 2.3, .1, 0.3, .01))
 with row0_1:
     st.header("DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction")
 with row0_2:
