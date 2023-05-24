@@ -106,7 +106,7 @@ with row0_1:
             st.text("1.23")
             time.sleep(5)
 with row0_2:
-    clicked_km = st.button("Predict Km")
+    clicked_km = st.button("Km")
     if clicked_km: 
         with st.spinner('Predicting ...'):
             st.text("1.23")
@@ -114,7 +114,7 @@ with row0_2:
             st.text("1.23")
     calculate_kcat_km(enzyme, organism_name, substrate_name)
 with row0_3:
-    clicked_ki = st.button("Predict Ki")
+    clicked_ki = st.button("Ki")
     if clicked_ki: 
         with st.spinner('Predicting ...'):
             st.text("1.23")
