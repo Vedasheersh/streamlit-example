@@ -17,21 +17,6 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
 
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.01, 2.3, .1, 0.3, .01))
-with row0_1:
-    st.header("DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction")
-with row0_2:
-    st.image('./cbi_logo.jpg', use_column_width=True)
-
-# horizontal menu
-selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", 'Help'], 
-    icons=['list-task', 'cloud-upload', 'info-square'], 
-    menu_icon="cast", default_index=0, orientation="horizontal")
-
-if selected2=="Bulk-prediction":
-    st.header('Upload CSV file in format described below')
-    uploaded_file = st.file_uploader('Upload a file')
-    
 def print_success(success):
     if success:
         st.success('Valid!', icon="✅")
@@ -70,56 +55,74 @@ def calculate_kcat_km(enzyme, organism_id, smiles):
 def calculate_ki(enzyme, organism_id, smiles):
     return 0.0
 
-# tab1, tab2, tab3 = st.tabs(["kcat", "Km", "Ki"])
-# with tab1:
-#     st.subheader(f"kcat : Turnover number")
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.01, 2.3, .1, 0.3, .01))
 with row0_1:
-    enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
+    st.header("DeepMMPred - Deep learning models for Michaelis-Menten parameter prediction")
 with row0_2:
-    st.text("")
-    st.text("")
-#         validate_enzyme(enzyme)
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
-with row0_1:
-#         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
-    organism_name = st.selectbox("Enter Organism name:", organism_unique_list)
-with row0_2:
-    st.text("")
-    st.text("")
-#         validate_organism(organism_name)
+    st.image('./cbi_logo.jpg', use_column_width=True)
 
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
-with row0_1:
-#         smiles = st.text_input("Substrate SMILES string:", value="CCO")
-    substrate_name = st.selectbox("Enter Substrate name:", substrate_unique_list)
-with row0_2:
-    st.text("")
-    st.text("")
-#         validate_smiles(substrate_name)
+# horizontal menu
+selected2 = option_menu(None, ["Single-prediction", "Bulk-prediction", 'Help'], 
+    icons=['list-task', 'cloud-upload', 'info-square'], 
+    menu_icon="cast", default_index=0, orientation="horizontal")
 
-row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3, row0_3, row0_spacer4, = st.columns((.1, 0.3, .1, 0.3, .1, 0.3,.1))
-with row0_1:
-    clicked_kcat = st.button("kcat")
-    if clicked_kcat: 
-        with st.spinner('Predicting ...'):
-            st.text("1.23")
-            time.sleep(5)
-with row0_2:
-    clicked_km = st.button("Km")
-    if clicked_km: 
-        with st.spinner('Predicting ...'):
-            st.text("1.23")
-            time.sleep(5)
-            st.text("1.23")
-    calculate_kcat_km(enzyme, organism_name, substrate_name)
-with row0_3:
-    clicked_ki = st.button("Ki")
-    if clicked_ki: 
-        with st.spinner('Predicting ...'):
-            st.text("1.23")
-            time.sleep(5)
-            st.text("1.23")
+if selected2=="Bulk-prediction":
+    st.header('Upload CSV file in format described below')
+    uploaded_file = st.file_uploader('Upload a file')
+elif selected2=='Single-prediction':
+    # tab1, tab2, tab3 = st.tabs(["kcat", "Km", "Ki"])
+    # with tab1:
+    #     st.subheader(f"kcat : Turnover number")
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+    with row0_1:
+        enzyme = st.selectbox("Enter EC number:", ec_unique_list, help="Keep typing and choose from suggestions. If you don't find your EC number type 'None'")
+    with row0_2:
+        st.text("")
+        st.text("")
+    #         validate_enzyme(enzyme)
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+    with row0_1:
+    #         organism_id = st.text_input("Organism NCBI Taxonomy id:", value="541")
+        organism_name = st.selectbox("Enter Organism name:", organism_unique_list)
+    with row0_2:
+        st.text("")
+        st.text("")
+    #         validate_organism(organism_name)
+
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((.1, 2.3, .1, 0.3, .1))
+    with row0_1:
+    #         smiles = st.text_input("Substrate SMILES string:", value="CCO")
+        substrate_name = st.selectbox("Enter Substrate name:", substrate_unique_list)
+    with row0_2:
+        st.text("")
+        st.text("")
+    #         validate_smiles(substrate_name)
+
+    row0_spacer1, row0_1, row0_spacer2, row0_2, row0_spacer3, row0_3, row0_spacer4, = st.columns((.1, 0.3, .1, 0.3, .1, 0.3,.1))
+    with row0_1:
+        clicked_kcat = st.button("kcat")
+        if clicked_kcat: 
+            with st.spinner('Predicting ...'):
+                st.text("1.23")
+                time.sleep(5)
+    with row0_2:
+        clicked_km = st.button("Km")
+        if clicked_km: 
+            with st.spinner('Predicting ...'):
+                st.text("1.23")
+                time.sleep(5)
+                st.text("1.23")
+        calculate_kcat_km(enzyme, organism_name, substrate_name)
+    with row0_3:
+        clicked_ki = st.button("Ki")
+        if clicked_ki: 
+            with st.spinner('Predicting ...'):
+                st.text("1.23")
+                time.sleep(5)
+                st.text("1.23")
+
+elif selected2=='Help':
+    st.text("Help text here..")
     
 # with tab2:
 #     st.header(f"Km : Michaelis constant")
